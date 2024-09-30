@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body background="background.png" class="bg-fixed bg-cover bg-blend-darken opacity-90">
+    <nav class="p-4 bg-blue-700 fixed top-0 left-0 right-0">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo / Brand Name -->
+            <div class="text-white text-2xl font-bold">
+                TravelGuru
+            </div>
+            <!-- Navbar Items -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="text-white hover:text-blue-200">Home</a>
+                <a href="#aboutus" class="text-white hover:text-blue-200">About Us</a>
+                <a href="#contactus" class="text-white hover:text-blue-200">Contact Us</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="flex items-center space-x-4">
+                <input id = "search-input" type="text" placeholder="Search..." class="px-4 py-2 rounded-md focus:outline-none">
+                <button
+                    id = "search-button"
+                    class="bg-white text-blue-600 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white transition">
+                    Search
+                </button>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden" id="mobile-menu" style="display: none;">
+            <a href="#" class="block text-white py-2 px-4 hover:bg-blue-500">Home</a>
+            <a href="#" class="block text-white py-2 px-4 hover:bg-blue-500">About Us</a>
+            <a href="#" class="block text-white py-2 px-4 hover:bg-blue-500">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="text-center max-w-3xl">
+            <h1 class="text-4xl font-bold text-white mb-20">"Explore the World, One Destination at a Time"</h1>
+            <p class="bg-gray-50 p-6 rounded-3xl text-2xl text-black mt-6 mb-20">
+                Welcome to our travel recommendation site! We offer personalized suggestions to help you discover breathtaking destinations, hidden gems, and unforgettable experiences. Let’s turn your wanderlust into a journey!
+            </p>
+            <div class="mt-6 mb-20">
+                <a href="#explore" class="bg-blue-600 text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-700 transition duration-300">
+                    Start Exploring
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="results-container" >
+        <!-- Search results will be displayed here -->
+    </div>
+
+    <!-- about us section -->
+    <div id = "aboutus" class="max-w-5xl mx-auto p-8">
+        <!-- Company Information Section -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h1 class="text-4xl font-bold text-blue-600 mb-4">About Our Company</h1>
+            <p class="text-lg leading-relaxed">
+                We are a dedicated travel recommendation platform, committed to helping adventurers discover amazing destinations around the world. Our mission is to inspire wanderlust and guide travelers on their journey to uncover hidden gems, breathtaking sights, and unforgettable experiences.
+            </p>
+        </section>
+        
+        <!-- Team Members Section -->
+        <section class="bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-3xl font-bold text-blue-600 mb-6">Meet Our Team</h2>
+            
+            <!-- Team Members Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://via.placeholder.com/150" alt="Team Member" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+                    <h3 class="text-xl font-semibold text-gray-800">Alice Johnson</h3>
+                    <p class="text-gray-600">CEO & Founder</p>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://via.placeholder.com/150" alt="Team Member" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+                    <h3 class="text-xl font-semibold text-gray-800">Mark Williams</h3>
+                    <p class="text-gray-600">Chief Technology Officer</p>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://via.placeholder.com/150" alt="Team Member" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+                    <h3 class="text-xl font-semibold text-gray-800">Sarah Brown</h3>
+                    <p class="text-gray-600">Marketing Manager</p>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://via.placeholder.com/150" alt="Team Member" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+                    <h3 class="text-xl font-semibold text-gray-800">David Lee</h3>
+                    <p class="text-gray-600">Lead Developer</p>
+                </div>
+                
+                <!-- Team Member 5 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://via.placeholder.com/150" alt="Team Member" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+                    <h3 class="text-xl font-semibold text-gray-800">Jessica Smith</h3>
+                    <p class="text-gray-600">UI/UX Designer</p>
+                </div>
+
+                <!-- Team Member 6 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://via.placeholder.com/150" alt="Team Member" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+                    <h3 class="text-xl font-semibold text-gray-800">Michael Anderson</h3>
+                    <p class="text-gray-600">Customer Support Specialist</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- contact us section -->
+    <div id = "contactus" class="flex items-center justify-center min-h-screen">
+        <div class="bg-gray-50 rounded-lg shadow-lg p-8 w-full max-w-md">
+            <h1 class="text-2xl font-bold text-center text-blue-600 mb-6">Contact Us</h1>
+            <form action="#" method="POST">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700">Name</label>
+                    <input type="text" id="name" name="name" required class="border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" required class="border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Email">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700">Message</label>
+                    <textarea id="message" name="message" required class="border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500" rows="5" placeholder="Your Message"></textarea>
+                </div>
+                <div class="flex justify-center">
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
